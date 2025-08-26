@@ -14,4 +14,4 @@ while len(m) > 1:
     del m[j]
     pos = j % len(m)
 
-print(m)
+print(m) 
