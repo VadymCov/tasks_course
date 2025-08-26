@@ -25,6 +25,6 @@ zodiac_animals = [
     "Rabbit"
 ]
 
-index = (year - 2000) % 12
+index = (year - 2000) % 12 
 print(zodiac_animals[index])
 
