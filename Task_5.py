@@ -6,7 +6,7 @@
 # The first line contains the number of points.
 # Each of the following lines contains two integers — the coordinates of a point
 # (first the x-coordinate, then the y-coordinate), separated by a space.
-
+  
 number_of_points = int(input())
 quarter_1 = 0
 quarter_2 = 0
