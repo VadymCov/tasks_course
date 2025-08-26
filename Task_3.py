@@ -17,4 +17,4 @@ for i in n:
     count += 1
     result += i
 
-print(result[::-1])
+print(result[::-1]) 
