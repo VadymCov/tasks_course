@@ -8,4 +8,4 @@ if len(s) == 5:
     res += int(s[::-1])
 else:
     res += int(s[0] + s[1:][::-1])
-print(res)
+print(res) 
