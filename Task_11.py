@@ -7,22 +7,14 @@
 # The program receives two lines of text containing the words "rock", "paper", or "scissors".
 # The first line contains the choice of player_one, and the second line contains the choice of player_two.
 
+variation = ["rock", "paper", "scissors"]
+outcomes = ["tie", "player_one", "player_two"]
 
 player_one = input()
 player_two = input()
 
+p1 = variation.index(player_one)
+p2 = variation.index(player_two)
 
-if player_one[0] == player_two[0]:
-    print("draw")
-
-elif player_one[0] == "p" and player_two[0] == "r":
-    print("player_one")
-
-elif player_one[0] == "r" and player_two[0] == "s":
-    print("player_one")
-
-elif player_one[0] == "s" and player_two[0] == "p":
-    print(player_one)
-
-else:
-    print("player_two")
+winner_comb = (p1 - p2) % len(variation)
+print(outcomes[winner_comb])
