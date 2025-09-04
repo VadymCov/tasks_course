@@ -27,4 +27,8 @@ def max_table():
         for j in range(m):
             if matrix[i][j] == max(max(matrix, key=max)):
                 return print(f"{i} {j}")
+            
+
+# Test________________
+
 max_table()
