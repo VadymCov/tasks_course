@@ -27,4 +27,15 @@ for _ in range(num_cities):
     result.append(my_dict.get(input(), 'there is no such country'))
 print(*result, sep="\n")
 
-    
+
+# Test______________________________________________________________
+
+num = int(input())
+my_dict = {}
+
+for _ in range(num):
+    countries, *cities = input().split()
+    my_dict.update(dict.fromkeys(cities, countries))
+
+for _ in range(int(input())):
+    print(my_dict[input()])
