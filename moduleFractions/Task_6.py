@@ -1,4 +1,4 @@
-# 🤓 Young Mathematician 🌶️
+# 🤓 Young Mathematician 
 # Alex is in seventh grade and they're studying common fractions with natural numerators and denominators.
 # Yesterday in math class, Alex learned that a fraction is proper if its numerator is less than the denominator,
 # or irreducible if no equal fraction exists with smaller natural numerator and denominator.
