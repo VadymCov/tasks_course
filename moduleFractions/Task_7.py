@@ -17,6 +17,10 @@
 from fractions import Fraction as F
 from math import gcd
 
+
+
+
+
 n = int(input())
 fraction_list = []
 for i in range(1, n):
