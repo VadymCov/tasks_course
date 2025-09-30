@@ -3,6 +3,7 @@
 # Input format: Two complex numbers are given to the program, each on a separate line.
 # Output format: The program should output the answer to the task.
 
+
 c_1 = complex(input())
 c_2 = complex(input())
 ad = f"{c_1} + {c_2} = {c_1 + c_2}"
