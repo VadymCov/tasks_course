@@ -28,14 +28,22 @@ athletes = [
     ("Peter", 15, 190, 90),
 ]
 
+
 def name(ath):
     return ath[0]
+
+
 def age(ath):
     return ath[1]
+
+
 def height(ath):
     return ath[2]
+
+
 def weight(ath):
     return ath[3]
+
 
 all_func = (name, age, height, weight)
 result = sorted(athletes, key=all_func[int(input())])
