@@ -2,7 +2,6 @@
 # Then, use the map() function to compute the cube of each selected number.
 # Finally, print each cube on a separate line.
 # Note: The condition about the remainder must apply to the original number, not its cube.
-
 def map(function, items):
     result = []
     for item in items:
