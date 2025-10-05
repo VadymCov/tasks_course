@@ -31,4 +31,4 @@ map_result = map(lambda x : x[0], filter_result)
 
 sort_result = sorted(map_result)
 
-print("Cities:", reduce(lambda x, y: x + ", " + y, sort_result)
+print("Cities:", reduce(lambda x, y: x + ", " + y, sort_result))
