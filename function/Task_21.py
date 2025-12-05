@@ -1,19 +1,55 @@
+"""Annettuna on sanaruudukko ja tehtäväsi on etsiä sieltä sanoja. Sana voi kulkea pysty-,
+vaaka- tai vinosuunnassa etuperin tai takaperin.
+
+Toteuta tiedostoon wordgrid.py luokka WordFinder, jossa on seuraavat metodit:
+
+    set_grid: metodille annetaan sanaruudukon sisältö listana, joka esittää ruudukon rivit merkkijonoina
+    count: laskee annetun sanan esiintymiskerrat ruudukossa
+
+Jos sana voidaan lukea useaan suuntaan samoista ruudukon kirjaimista,
+metodin count tulee laskea tällaiset esiintymät vain yhtenä esiintymiskertana.
+
+Luokkasi toimintaa testataan erilaisilla ruudukoilla. Jokaisessa ruudukossa leveys ja korkeus on enintään 20 merkkiä.
+Jokainen merkki on kirjain välillä A–Z."""
+
+
+
 class WordFinder:
     def set_grid(self, grid):
-        self.g = grid
+        self.grid = grid
+        self.rows = len(grid)
+        self.cols = len(grid[0])
+        self.derections = [
+            (0, 1), (0, -1),
+            (-1, 0), (1, 0),
+            (+1, +1), (-1, -1),
+            (-1, +1), (+1, -1)
+        ]
 
     def count(self, word):
-        cnt = 0
-        cols = len(self.g[0])
-        rows = len(self.g)
-        L = len(word)
-        first = word[0]
-        for r in range(rows):
-            for c in range(cols):
-                if first == self.g[r][c]:
-                    if c + L <= cols and word == self.g[r][c:c+L]:
-                        cnt += 1
-        return cnt
+        cnt = set()
+        for r in range(self.rows):
+            for c in range(self.cols):
+                if self.grid[r][c] == word[0]:
+                    for dr, dc in self.derections:
+                        letter_cnt = 1
+                        rn, cn = r, c
+                        for k in range(1, len(word)):
+                            rn = r + k * dr
+                            cn = c + k * dc
+                            if (
+                                    0 <= rn < self.rows and
+                                    0 <= cn < self.cols and
+                                    self.grid[rn][cn] ==  word[k]
+                            ):
+                                continue
+                            else:
+                                break
+                        else:
+                            unique_key = tuple(sorted([(r,c),(rn, cn)]))
+                            cnt.add(unique_key)
+        return len(cnt)
+
 
 if __name__ == "__main__":
     grid = ["TIRATIRA",
@@ -25,18 +61,9 @@ if __name__ == "__main__":
     finder.set_grid(grid)
 
     print(finder.count("TIRA")) # 7
-    # print(finder.count("TA")) # 13
-    # print(finder.count("RITARI")) # 3
-    # print(finder.count("A")) # 8
-    # print(finder.count("AA")) # 6
-    # print(finder.count("RAITA")) # 0
+    print(finder.count("TA")) # 13
+    print(finder.count("RITARI")) # 3
+    print(finder.count("A")) # 8
+    print(finder.count("AA")) # 6
+    print(finder.count("RAITA")) # 0
 
-"""
-Реалізуйте клас WordFinder у файлі wordgrid.py за допомогою таких методів:
-
-    set_grid: метод отримує вміст слова grid у вигляді списку, який представляє рядки сітки як рядки.
-    count: підраховує кількість входжень заданого слова в сітці
-
-Якщо слово можна прочитати в кількох напрямках з тих самих літер у сітці, метод count повинен вважати такі входження лише одним.
-
-Ваш клас буде протестовано на різних сітках. Кожна сітка має максимальну ширину та висоту 20 символів. Кожен символ – це літера від A до Z."""
