@@ -1,16 +1,16 @@
-"""Annettuna on sanaruudukko ja tehtäväsi on etsiä sieltä sanoja. Sana voi kulkea pysty-,
-vaaka- tai vinosuunnassa etuperin tai takaperin.
+"""Given a word grid, your task is to find words in it. The word can go vertically,
+horizontally, or diagonally, forwards or backwards.
 
-Toteuta tiedostoon wordgrid.py luokka WordFinder, jossa on seuraavat metodit:
+Implement a class WordFinder in the file wordgrid.py with the following methods:
 
-    set_grid: metodille annetaan sanaruudukon sisältö listana, joka esittää ruudukon rivit merkkijonoina
-    count: laskee annetun sanan esiintymiskerrat ruudukossa
+set_grid: the method is given the contents of the word grid as a list, which represents the rows of the grid as strings
+count: counts the occurrences of the given word in the grid
 
-Jos sana voidaan lukea useaan suuntaan samoista ruudukon kirjaimista,
-metodin count tulee laskea tällaiset esiintymät vain yhtenä esiintymiskertana.
+If the word can be read in multiple directions from the same letters in the grid,
+the method count should count such occurrences as only one occurrence.
 
-Luokkasi toimintaa testataan erilaisilla ruudukoilla. Jokaisessa ruudukossa leveys ja korkeus on enintään 20 merkkiä.
-Jokainen merkki on kirjain välillä A–Z."""
+The functionality of your class will be tested on different grids. Each grid has a maximum width and height of 20 characters.
+Each character is a letter from A to Z."""
 
 
 
